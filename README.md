@@ -1,7 +1,8 @@
 # college-finance
 A company will be offering loans to students for the Fall 2023 semester and they’ve asked you to put together a program that facilitates the application process for loans.
 
-Software Requirements
+Software Requirements:
+
 Students may apply for loans ranging from $1,000 to $10,000, which will be paid back over a 4-year period. Applications for the loans will be accepted from June 1 - August 15, 2023. The interest rate for the loan will depend on the student’s credit score and 2022 income according to the chart below. Students who meet the first criterion by having an excellent credit score will receive a prime lending rate, which is the best (lowest) available interest rate. Students who don’t meet the first criterion but meet one of the other criteria will receive a higher interest rate. Loans for students who do not meet any of the criteria will be denied.
 
 Loans are typically disbursed (paid out) 21 days after the application date. However, for a fee of $30, express processing may be requested in which case the loan will be disbursed 3 days after the application date. The $30 fee will be added to the total loan amount, which will be used when determining whether the loan is approved and the interest rate.
@@ -12,7 +13,8 @@ Loans for students who do not meet the first two criteria, but have a credit sco
 Loans for students who do not meet the first three criteria, but have a credit score of at least 350 and a 2022 income of at least 2 times the loan amount will be approved with an interest rate of 9.0%.
 Loans for students who do not meet any of the criteria will be denied.
 
-User Interface
+User Interface:
+
 It must display a header that lists the name of the application and provides instructions about using the program:
                  Welcome to College Finance!
  Applications for loans from $1000 to $10000 will be accepted from
@@ -41,7 +43,8 @@ Disbursement Date: Tue, 8 15 2023
 
 If the loan is not approved, the program must output “Loan denied”.
 
-Input/Error Handling
+Input/Error Handling:
+
 If the user enters a date that is not between June 1 and August 15, inclusive, the program must output Invalid date. If the user enters a credit score that is not between 300 and 850, inclusive, the program must output Invalid credit score. If the user enters a negative income, the program must output Invalid income. If the user enters a loan amount that is not between 1000 and 10000, inclusive, the program must output Invalid loan amount. Your program must exit (stop) as soon as an invalid date, credit score, income, or loan amount is entered.
 
 NOTE: You do not need to handle the situation where the user enters something other than an integer for month, day, credit score, income, or loan amount. We will learn to handle this later in the semester.
