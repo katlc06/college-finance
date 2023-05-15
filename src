@@ -1,1 +1,424 @@
-// Don't know how to import the java.util package yet
+import java.util.*;
+/**
+ * Determines elgibility for a loan based on the user's credit score, 
+ * 2022 income, and interest rate and if accepted, 
+ * outputs the loan amount, interest rate, monthly payment, and disbursement date to the user
+ * @author katlc06
+ */
+public class CollegeFinance {
+    /** The number associated with June */
+    public static final int JUNE = 6;
+    
+    /** The number associated with July */
+    public static final int JULY = 7;
+    
+    /** The number associated with August */
+    public static final int AUGUST = 8;
+    
+    /** The number associated with September */
+    public static final int SEPTEMBER = 9;
+        
+    /** Days in June*/
+    public static final int DAYS_IN_JUNE = 30;
+    
+    /** Days in July */
+    public static final int DAYS_IN_JULY = 31;
+    
+    /** Days in August */
+    public static final int DAYS_IN_AUGUST = 31;
+    
+    /** August Valid Date Cutoff */
+    public static final int AUGUST_CUTOFF = 15;
+    
+    /** Days to wait for the loan after application date without express processing */
+    public static final int DAYS_ADDED_NOEXPRESS = 21;
+    
+    /** Express processing fee */
+    public static final int EXPRESS_FEE = 30;
+    
+    /** Days to wait for the loan after application date with express processing */
+    public static final int DAYS_ADDED_EXPRESS = 3;
+    
+    /** Max credit score */
+    public static final int MAX_CREDIT = 850;
+    
+    /** Minimum for highest credit score */
+    public static final int HIGH_CREDIT_MIN = 720;
+    
+    /** Minimum for middle credit score */
+    public static final int MID_CREDIT_MIN = 500;
+    
+    /** Minimum credit score for loans*/
+    public static final int LOW_CREDIT_MIN = 350;
+    
+    /** Min credit score */
+    public static final int MIN_CREDIT = 300;
+    
+    /** Max loan amount */
+    public static final int MAX_LOAN_AMOUNT = 10000;
+    
+    /** Min loan amount */
+    public static final int MIN_LOAN_AMOUNT = 1000;
+    
+    /** Muplication for laon amount */
+    public static final int MULT_FOR_LOAN = 5;
+    
+    /** Cutoff interest rate */
+    public static final double CUTOFF_RATE = 0.5;
+    
+    /** Min interest rate */
+    public static final double MIN_RATE = 7.5;
+
+    /** Second lowest rate */
+    public static final double SECOND_MIN_RATE = 8.0;
+    
+    /** Second highest rate */
+    public static final double SECOND_MAX_RATE = 8.5;  
+    
+    /** Max interest rate */
+    public static final double MAX_RATE = 9.0;
+        
+    /** Sunday number */
+    public static final int SUNDAY = 0;
+    
+    /** Monday number */
+    public static final int MONDAY = 1;
+    
+    /** Tuesday number */
+    public static final int TUESDAY = 2;
+    
+    /** Wednesday number */
+    public static final int WEDNESDAY = 3;
+    
+    /** Thursday number */
+    public static final int THURSDAY = 4;
+    
+    /** Friday number */
+    public static final int FRIDAY = 5;
+    
+    /** Saturday number */
+    public static final int SATURDAY = 6;
+    
+    /** Year loans are available */
+    public static final int YEAR = 2023;
+    
+    /** 4 year in a months */
+    public static final int YEARS_IN_MONTHS = 48;
+    
+    /** 1 year in a month */
+    public static final int YEAR_IN_MONTHS = 12;
+    
+    /**
+     * Prompts user for the date, credit score, 2022 income, loan amount, and express processing
+     * Outputs loan amount, interest rate, monthly payment, and disbursement date
+     * @param args command line arguments (not used)
+     */
+    public static void main(String[] args) {
+        Scanner scnr = new Scanner(System.in);
+        System.out.print("                         ");
+        System.out.print("Welcome to Wolfpack Finance!");
+        System.out.println("                         ");
+        System.out.print("Applications for loans from $1000 to $10000 will be accepted ");
+        System.out.print("from June 1 to ");
+        System.out.print("August 15, 2023. All loans will be paid back over a 4 year");
+        System.out.print(" period. When prompted, please enter today's date, your credit");
+        System.out.print(" score, your 2022 income, and the loan amount."); 
+        System.out.print(" Loans are normally paid out 21 days after the application date, ");
+        System.out.print("but for a fee of $30, which will be added to the loan amount,");
+        System.out.print(" you may request Express Processing in which case");
+        System.out.print(" the loan will be paid out 3 days after the application date. ");
+        System.out.print(" If your loan is approved, the loan amount, interest rate, ");
+        System.out.println("disbursement date, and monthly payment amount will be output. ");
+        System.out.println("");
+        
+        System.out.print("Date (e.g., 6 9): ");
+        String date = scnr.nextLine();
+        String monthNumber = date.substring(0, 1);
+        String dayNumber = date.substring(2);
+        int month = Integer.valueOf(monthNumber);
+        int day =  Integer.valueOf(dayNumber);
+       
+        if (month == JUNE){
+            if ((day < 1) || (day > DAYS_IN_JUNE)){
+                System.out.print("Invalid date");
+                System.exit(1);
+            }
+        }
+        else if (month == JULY){
+            if ((day < 1) || (day > DAYS_IN_JULY)){
+                System.out.print("Invalid date");
+                System.exit(1);
+            }
+        }
+        else if(month == AUGUST){
+            if ((day < 1) || (day > AUGUST_CUTOFF)){
+                System.out.print("Invalid date");
+                System.exit(1);
+            }
+        }
+        else if ((month < JUNE) || (month > AUGUST)){
+            System.out.print("Invalid date");
+            System.exit(1);
+        }
+
+        System.out.print("Credit Score (300-850): ");
+        int creditScore = scnr.nextInt();
+        if((creditScore > MAX_CREDIT) || (creditScore < MIN_CREDIT)) {
+            System.out.print("Invalid credit score");
+            System.exit(1);
+        }
+
+        System.out.print("2022 Income: ");
+        int income = scnr.nextInt();
+        if(income < 0 ) {
+            System.out.print("Invalid income");
+            System.exit(1);
+        }
+
+        System.out.print("Loan Amount (1000-10000): ");
+        int loanAmount = scnr.nextInt();
+        if((loanAmount < MIN_LOAN_AMOUNT) || (loanAmount > MAX_LOAN_AMOUNT)) {
+            System.out.print("Invalid loan amount");
+            System.exit(1);
+        }        
+
+        System.out.print("Express Processing (y,n): ");
+        String expressProcessing = scnr.next();
+        char first = expressProcessing.charAt(0);
+        double loan = loanAmount;
+        boolean express = true;
+        if ((first == 'y') || (first == 'Y')){
+            express = true;
+            loanAmount = loanAmount + EXPRESS_FEE;
+            loan = loan + EXPRESS_FEE;
+        }
+        else {
+            express = false;
+            loan = loan;
+        }
+
+        double annualInterestRate = getInterestRate(loanAmount, creditScore, income);
+        int numberofMonths = YEARS_IN_MONTHS;
+        
+        System.out.println("");
+        if (getInterestRate(loanAmount, creditScore, income) == -1){
+            System.out.println("Loan denied");
+        }
+        else {
+            System.out.print("Loan Amount: $");
+            System.out.println(loanAmount + ".00");
+            System.out.print("Interest Rate: ");
+            System.out.println(getInterestRate(loanAmount, creditScore, income) + "%");
+            System.out.print("Monthly Payment: $");
+            System.out.printf("%.2f\n", getMonthlyPayment(loan, annualInterestRate, numberofMonths));
+            System.out.print("Disbursement Date: " + getDisbursementDate(month, day, express));
+            System.out.println("");
+        }
+    }   
+
+    /**
+     * Determines if the inputted date is a valid date
+     * @param month - user's inputted month number
+     * @param day - user's inputted day number
+     * @return true if the date is a valid date between June 1 and August 15, false otherwise
+     */
+    public static boolean isValidDate(int month, int day) {
+        if ((month == JUNE) && ((day > 0) && (day <= DAYS_IN_JUNE))) {
+            return true;
+        }
+        if ((month == JULY) && ((day > 0) && (day <= DAYS_IN_JULY))) {
+            return true;
+        }        
+        if ((month == AUGUST) && ((day > 0) && (day <= AUGUST_CUTOFF))) {
+            return true;
+        }        
+        else {
+            return false;
+        }
+    }
+    
+    /**
+     * Determines whether a loan is approved as well as the interest rate based on the loan amount,
+     * the borrower's credit score and the borrower's 2022 income
+     * @param loanAmount - user's inputted loan amount
+     * @param creditScore - user's inputted credit score
+     * @param income - user's inputted income
+     * @return the interest rate if the loan is approved, otherwise returns -1.0 if the loan is not approved
+     * @throws IllegalArgumentException with the message, "Invalid loan amount", if the loan
+     *         amount is less than or equal to 0
+     * @throws IllegalArgumentException with the message, "Invalid credit score", if the credit
+     *         score is less than 300 or greater than 850
+     * @throws IllegalArgumentException with the message, "Invalid income", if the income
+     *         amount is less than 0
+     */
+    public static double getInterestRate(int loanAmount, int creditScore, int income){
+        if (loanAmount <= 0){
+            throw new IllegalArgumentException("Invalid loan amount");
+        }
+        if ((creditScore < MIN_CREDIT) || (creditScore > MAX_CREDIT)) {
+            throw new IllegalArgumentException("Invalid credit score");
+        }
+        if (income < 0){
+            throw new IllegalArgumentException("Invalid income");
+        }
+        if ((creditScore >= HIGH_CREDIT_MIN) && (creditScore <= MAX_CREDIT)){
+            double rate = MIN_RATE;
+            return rate;
+        }
+        else if (creditScore < HIGH_CREDIT_MIN && income >= (MULT_FOR_LOAN * loanAmount)){
+            double rate = SECOND_MIN_RATE;
+            return rate;
+        }
+        else if ((creditScore >= MID_CREDIT_MIN) && (income >= (3 * loanAmount))){
+            double rate = SECOND_MAX_RATE;
+            return rate;
+        }
+        else if ((creditScore >= LOW_CREDIT_MIN) && (income >= 2 * loanAmount)){
+            double rate = MAX_RATE;
+            return rate;
+        }
+        else {
+            return -1.0;
+        }
+    }
+
+    /**
+     * Calculates & returns the monthly payment amount for a loan based on the loan amount,
+     * the annual interest rate, and the number of months over which the loan is being repaid
+     * @param loanAmount - loan amount for the user
+     * @param annualInterestRate - interest rate for the user
+     * @param numberofMonths - number of months the loan is being repaid over
+     * @return monthly payment amount for a loan
+     * @throws IllegalArgumentException with the message, "Invalid loan amount", if the
+     *         loan amount is less than or equal to 0
+     * @throws IllegalArgumentException with the message, "Invalid interest rate", if the
+     *         annual interest rate is less than 0.5
+     * @throws IllegalArgumentException with the message, "Invalid interest rate", if the
+     *         number of months is less than or equal to 0
+     */
+    public static double getMonthlyPayment(double loanAmount,double annualInterestRate,int numberofMonths){
+        if (loanAmount <= 0){
+            throw new IllegalArgumentException("Invalid loan amount");
+        }
+        if (annualInterestRate < CUTOFF_RATE) {
+            throw new IllegalArgumentException("Invalid interest rate");
+        }
+        if (numberofMonths <= 0){
+            throw new IllegalArgumentException("Invalid number of months");
+        }
+        annualInterestRate = (annualInterestRate / 100.00) / YEAR_IN_MONTHS;
+        double monthlyPayment = Math.pow((1 + annualInterestRate), numberofMonths);
+        double numeratorMonthlyPayment = annualInterestRate * monthlyPayment;
+        double denominatorMonthlyPayment = monthlyPayment - 1;
+        double monthlyPaymentAmount = loanAmount * (numeratorMonthlyPayment / denominatorMonthlyPayment);
+        return monthlyPaymentAmount;
+    }
+
+    /**
+     * Determines and returns a String containing the day of the week (Sun, Mon, Tue, Wed, Thu, Fri, Sat),
+     * month, day, and year a loan will be disbursed (paid out) based on the applicationMonth, applicationDay,
+     * a year of 2023, and whether the loan will receive express processing, for example, "Sun, 7 2 2023". 
+     * The String must be formatted exactly this way. The disbursement date is 3 days after the application
+     * date for loans receiving express processing, 21 days after the application date, otherwise
+     * @param applicationMonth - month when the user is requesting a loan
+     * @param applicationDay - day when the user is requesting a loan
+     * @param expressProcessing - if the user qualifies for express processing
+     * @return A string containing day of the week, month, day, and year a loan will be disbursed
+     * @throws IllegalArgumentException with the message, "Invalid date", if the applicationMonth/applicationDay
+     *         is not a valid date between June 1 and August 15
+     */
+    public static String getDisbursementDate(int applicationMonth, int applicationDay, boolean expressProcessing){
+        if (isValidDate(applicationMonth, applicationDay) == false){
+            throw new IllegalArgumentException("Invalid date");
+        }
+        int disburseMonth = 0;
+        int disburseDay = 0;
+        String month;
+        String day;
+        if (expressProcessing == true){
+            if (applicationMonth == JUNE){
+                disburseDay = applicationDay + DAYS_ADDED_EXPRESS;
+                disburseMonth = JUNE;
+                if (disburseDay > DAYS_IN_JUNE){
+                    disburseMonth = JULY;
+                    disburseDay = disburseDay - DAYS_IN_JUNE;
+                }
+            }
+            if (applicationMonth == JULY){
+                disburseDay = applicationDay + DAYS_ADDED_EXPRESS;
+                disburseMonth = JULY;
+                if (disburseDay > DAYS_IN_JULY){
+                    disburseMonth = AUGUST;
+                    disburseDay = disburseDay - DAYS_IN_JULY;
+                }
+            }
+            if (applicationMonth == AUGUST){
+                disburseDay = applicationDay + DAYS_ADDED_EXPRESS;
+                disburseMonth = AUGUST;
+                if (disburseDay > DAYS_IN_AUGUST){
+                    disburseMonth = SEPTEMBER;
+                    disburseDay = disburseDay - DAYS_IN_AUGUST;
+                }
+            }
+        }
+        else {
+            if (applicationMonth == JUNE){
+                disburseDay = applicationDay + DAYS_ADDED_NOEXPRESS;
+                disburseMonth = JUNE;
+                if (disburseDay > DAYS_IN_JUNE){
+                    disburseMonth = JULY;
+                    disburseDay = disburseDay - DAYS_IN_JUNE;
+                }
+            }
+            if (applicationMonth == JULY){
+                disburseDay = applicationDay + DAYS_ADDED_NOEXPRESS;
+                disburseMonth = JULY;
+                if (disburseDay > DAYS_IN_JULY){
+                    disburseMonth = AUGUST;
+                    disburseDay = disburseDay - DAYS_IN_JULY;
+                }
+            }
+            if (applicationMonth == AUGUST){
+                disburseDay = applicationDay + DAYS_ADDED_NOEXPRESS;
+                disburseMonth = AUGUST;
+                if (disburseDay > DAYS_IN_AUGUST){
+                    disburseMonth = SEPTEMBER;
+                    disburseDay = disburseDay - DAYS_IN_AUGUST;
+                }
+            }
+        }
+        
+        int w = YEAR - (14 - disburseMonth) / YEAR_IN_MONTHS;
+        int x = w + w / 4 - w / 100 + w / 400;
+        int z = disburseMonth + YEAR_IN_MONTHS * ((14 - disburseMonth) / YEAR_IN_MONTHS) - 2;
+        int dayOftheWeek = (disburseDay + x + (31 * z) / YEAR_IN_MONTHS) % 7;
+        
+        String dayOfWeek = "";
+        if (dayOftheWeek == SUNDAY){
+            dayOfWeek = "Sun";
+        }
+        if (dayOftheWeek == MONDAY){
+            dayOfWeek = "Mon";
+        }
+        if (dayOftheWeek == TUESDAY){
+            dayOfWeek = "Tue";
+        }
+        if (dayOftheWeek == WEDNESDAY){
+            dayOfWeek = "Wed";
+        }
+        if (dayOftheWeek == THURSDAY){
+            dayOfWeek = "Thurs";
+        }
+        if (dayOftheWeek == FRIDAY){
+            dayOfWeek = "Fri";
+        }
+        if (dayOftheWeek == SATURDAY){
+            dayOfWeek = "Sat";
+        }
+
+        month = String.valueOf(disburseMonth);
+        day = String.valueOf(disburseDay);
+        String date = (dayOfWeek + ", " + month + " " + day + " 2023");
+        return date;
+    }
+}
