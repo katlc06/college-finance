@@ -3,8 +3,8 @@ Test ID: test8.5InterestNotExpressDisbursementAug15
 Author: katlc06
 
 Description:
-    Preconditions: WolfpackFinance program started
     
+    Preconditions: WolfpackFinance program started
     Header
   
     Month Day (e.g., 6 9): 7 25
@@ -22,7 +22,7 @@ Expected Results:
     Program Exits
 Actual Results:
    
-   Loan Amount: $3500.00
+    Loan Amount: $3500.00
     Interest Rate: 8.5%
     Monthly Payment: $86.27
     Disbursement Date: Tue, 8 15 2023
@@ -34,8 +34,8 @@ Test ID: test7.5InterestRateExpressProcessingDisbursementJuly2
 Author: katlc06
 
 Description:
+   
     Preconditions: WolfpackFinance program started
-    
     Header
 
     Month Day (e.g., 6 9): 6 29
@@ -65,8 +65,8 @@ Test ID: testLoanDeniedCredit675IncomeTooLow
 Author: katlc06
 
 Description:
-    Preconditions: WolfpackFinance program started
     
+    Preconditions: WolfpackFinance program started
     Header
     
     Month Day (e.g., 6 9): 7 20
@@ -90,8 +90,8 @@ Test ID: testExpressProcessingIncreasesInterestRate
 Author: katlc06
 
 Description:
+    
     Preconditions: WolfpackFinance program started
-   
     Header
 
     Month Day (e.g., 6 9): 7 25
@@ -121,8 +121,8 @@ Test ID: testInvalidDateJunNearEndofMonthBoundary
 Author: katlc06
 
 Description:
+    
     Preconditions: WolfpackFinance program started
-   
     Header
     
     Month Day (e.g., 6 9): 6 31
@@ -142,8 +142,8 @@ Test ID: testInvalidCreditScoreTooLow
 Author: katlc06
 
 Description:
-    Preconditions: WolfpackFinance program started
     
+    Preconditions: WolfpackFinance program started
     Header
 
     Month Day (e.g., 6 9): 7 31
@@ -164,8 +164,8 @@ Test ID: testNegativeIncome
 Author: katlc06
 
 Description:
-    Preconditions: WolfpackFinance program started
     
+    Preconditions: WolfpackFinance program started
     Header
 
     Month Day (e.g., 6 9): 8 3
@@ -187,8 +187,8 @@ Test ID: testInvalidLoanAmountTooLow
 Author: katlc06
 
 Description:
-    Preconditions: WolfpackFinance program started
     
+    Preconditions: WolfpackFinance program started
     Header
 
     Month Day (e.g., 6 9): 8 15
@@ -211,8 +211,8 @@ Test ID: testInvalidLoanAmountTooHigh
 Author: katlc06
 
 Description:
-    Preconditions: WolfpackFinance program started
     
+    Preconditions: WolfpackFinance program started
     Header
 
     Month Day (e.g., 6 9): 7 10
@@ -235,6 +235,7 @@ Test ID: testInvalidCreditScoreTooHigh
 Author: katlc06
 
 Description:
+    
     Preconditions: WolfpackFinance program started
     Header
     
@@ -256,8 +257,8 @@ Test ID: testInvalidDateJuly32
 Author: katlc06
 
 Description:
-    Preconditions: WolfpackFinance program started
     
+    Preconditions: WolfpackFinance program started
     Header
 
     Month Day (e.g., 6 9): 7 32
@@ -277,8 +278,8 @@ Test ID: testInvalidDateAug16
 Author: katlc06
 
 Description:
-    Preconditions: WolfpackFinance program started
     
+    Preconditions: WolfpackFinance program started
     Header
 
     Month Day (e.g., 6 9): 8 16
@@ -298,8 +299,8 @@ Test ID: testInvalidDateMay
 Author: katlc06
 
 Description:
-    Preconditions: WolfpackFinance program started
     
+    Preconditions: WolfpackFinance program started
     Header
     
     Month Day (e.g., 6 9): 5 4
@@ -319,8 +320,8 @@ Test ID: testInvalidDateJuly0
 Author: katlc06
 
 Description:
-    Preconditions: WolfpackFinance program started
     
+    Preconditions: WolfpackFinance program started
     Header
     
     Month Day (e.g., 6 9): 7 0
@@ -340,8 +341,8 @@ Test ID: testLoanDeniedCreditTooLowIncome3TimesLoan
 Author: katlc06
 
 Description:
-    Preconditions: WolfpackFinance program started
     
+    Preconditions: WolfpackFinance program started
     Header
 
     Month Day (e.g., 6 9): 7 10
@@ -365,8 +366,8 @@ Test ID: test9.0InteresCredit350ExpressProcessingDisbursementJuly15
 Author: katlc06
 
 Description:
-    Preconditions: WolfpackFinance program started
     
+    Preconditions: WolfpackFinance program started
     Header
 
     Month Day (e.g., 6 9): 7 12
@@ -396,8 +397,8 @@ Test ID: test8.0InterestNotExpressProcessingDisbursementSep2
 Author: katlc06
 
 Description:
-    Preconditions: WolfpackFinance program started
     
+    Preconditions: WolfpackFinance program started
     Header
 
     Month Day (e.g., 6 9): 8 12
@@ -427,6 +428,7 @@ Test ID: test9.0InterestCredit500ExpressProcessingDisbursementJuly15
 Author: katlc06
 
 Description:
+    
     Preconditions: WolfpackFinance program started
     Header
 
