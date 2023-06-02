@@ -1,9 +1,11 @@
-Test ID:
-    test8.5InterestNotExpressDisbursementAug15
-    Author: katlc06
+Test ID: test8.5InterestNotExpressDisbursementAug15
+
+Author: katlc06
+
 Description:
     Preconditions: WolfpackFinance program started
-    <<Header>>
+    
+    Header
   
     Month Day (e.g., 6 9): 7 25
     Credit Score (300-850): 675
@@ -11,6 +13,7 @@ Description:
     Loan Amount (1000-10000): 3500
     Express Processing(y,n): n
 Expected Results:
+    
     Loan Amount: $3500.00
     Interest Rate: 8.5%
     Monthly Payment: $86.27
@@ -18,19 +21,22 @@ Expected Results:
 
     Program Exits
 Actual Results:
-    Loan Amount: $3500.00
+   
+   Loan Amount: $3500.00
     Interest Rate: 8.5%
     Monthly Payment: $86.27
     Disbursement Date: Tue, 8 15 2023
 
     Program Exits
 --------------------------------------
-Test ID:
-    test7.5InterestRateExpressProcessingDisbursementJuly2
-    Author: katlc06
+Test ID: test7.5InterestRateExpressProcessingDisbursementJuly2
+   
+Author: katlc06
+
 Description:
     Preconditions: WolfpackFinance program started
-    <<Header>>
+    
+    Header
 
     Month Day (e.g., 6 9): 6 29
     Credit Score (300-850): 825
@@ -38,6 +44,7 @@ Description:
     Loan Amount (1000-10000): 9500
     Express Processing(y,n): yeah
 Expected Results:
+    
     Loan Amount: $9530.00
     Interest Rate: 7.5%
     Monthly Payment: $230.42
@@ -45,6 +52,7 @@ Expected Results:
 
     Program Exits
 Actual Results:
+    
     Loan Amount: $9530.00
     Interest Rate: 7.5%
     Monthly Payment: $230.42
@@ -52,12 +60,14 @@ Actual Results:
 
     Program Exits
 --------------------------------------
-Test ID:
-    testLoanDeniedCredit675IncomeTooLow
-    Author: katlc06
+Test ID: testLoanDeniedCredit675IncomeTooLow
+
+Author: katlc06
+
 Description:
     Preconditions: WolfpackFinance program started
-    <<Header>>
+    
+    Header
     
     Month Day (e.g., 6 9): 7 20
     Credit Score (300-850): 675
@@ -65,20 +75,24 @@ Description:
     Loan Amount (1000-10000): 3600
     Express Processing(y,n): abc
 Expected Results:
+
     Loan denied
     
     Program Exits
 Actual Results:
+
     Loan denied
     
     Program Exits
 --------------------------------------
-Test ID:
-    testExpressProcessingIncreasesInterestRate
-    Author: katlc06
+Test ID: testExpressProcessingIncreasesInterestRate
+
+Author: katlc06
+
 Description:
     Preconditions: WolfpackFinance program started
-    <<Header>>
+   
+    Header
 
     Month Day (e.g., 6 9): 7 25
     Credit Score (300-850): 675
@@ -86,6 +100,7 @@ Description:
     Loan Amount (1000-10000): 3500
     Express Processing(y,n): Y
 Expected Results:
+
     Loan Amount: $3530.00
     Interest Rate: 8.5%
     Monthly Payment: $87.01
@@ -93,6 +108,7 @@ Expected Results:
 
     Program Exits
 Actual Results:
+
     Loan Amount: $3530.00
     Interest Rate: 8.5%
     Monthly Payment: $87.01
@@ -100,192 +116,233 @@ Actual Results:
 
     Program Exits
 --------------------------------------
-Test ID:
-    testInvalidDateJunNearEndofMonthBoundary
-    Author: katlc06
+Test ID: testInvalidDateJunNearEndofMonthBoundary
+    
+Author: katlc06
+
 Description:
     Preconditions: WolfpackFinance program started
-    <<Header>>
+   
+    Header
     
     Month Day (e.g., 6 9): 6 31
 Expected Results:
-    Invalid date
+   
+   Invalid date
 
     Program Exits
 Actual Results:
+   
     Invalid date
 
     Program Exits
 --------------------------------------
-Test ID:
-    testInvalidCreditScoreTooLow
-    Author: katlc06
+Test ID: testInvalidCreditScoreTooLow
+
+Author: katlc06
+
 Description:
     Preconditions: WolfpackFinance program started
-    <<Header>>
+    
+    Header
 
     Month Day (e.g., 6 9): 7 31
     Credit Score (300-850): 250
 Expected Results:
+    
     Invalid credit score
 
     Program Exits
 Actual Results:
+    
     Invalid credit score
 
     Program Exits
 --------------------------------------
-Test ID:
-    testNegativeIncome
-    Author: katlc06
+Test ID: testNegativeIncome
+
+Author: katlc06
+
 Description:
     Preconditions: WolfpackFinance program started
-    <<Header>>
+    
+    Header
 
     Month Day (e.g., 6 9): 8 3
     Credit Score (300-850): 567
     2022 Income: -4
 Expected Results:
+    
     Invalid income
 
     Program Exits
 Actual Results:
+    
     Invalid income
 
     Program Exits
 --------------------------------------
-Test ID:
-    testInvalidLoanAmountTooLow
-    Author: katlc06
+Test ID: testInvalidLoanAmountTooLow
+
+Author: katlc06
+
 Description:
     Preconditions: WolfpackFinance program started
-    <<Header>>
+    
+    Header
 
     Month Day (e.g., 6 9): 8 15
     Credit Score (300-850): 760
     2022 Income: 10025
     Loan Amount (1000-10000): 999
 Expected Results:
+    
     Invalid loan amount
 
     Program Exits
 Actual Results:
+    
     Invalid loan amount
 
     Program Exits
 --------------------------------------
-Test ID:
-    testInvalidLoanAmountTooHigh
-    Author: katlc06
+Test ID: testInvalidLoanAmountTooHigh
+
+Author: katlc06
+
 Description:
     Preconditions: WolfpackFinance program started
-    <<Header>>
+    
+    Header
 
     Month Day (e.g., 6 9): 7 10
     Credit Score (300 - 850): 720
     2022 Income: 14000
     Loan Amount (1000-10000): 11000
 Expected Results:
+    
     Invalid loan amount
 
     Program Exits
 Actual Results:
+    
     Invalid loan amount
 
     Program Exits
 --------------------------------------
-Test ID:
-    testInvalidCreditScoreTooHigh
-    Author: katlc06
+Test ID: testInvalidCreditScoreTooHigh
+
+Author: katlc06
+
 Description:
     Preconditions: WolfpackFinance program started
-    <<Header>
+    Header
     
     Month Day (e.g., 6 9): 8 4
     Credit Score (300 - 850): 900
 Expected Results:
+    
     Invalid credit score
     
     Program Exits
 Actual Results:
+    
     Invalid credit score
     
     Program Exits
 --------------------------------------
-Test ID:
-    testInvalidDateJuly32
-    Author: katlc06
+Test ID: testInvalidDateJuly32
+
+Author: katlc06
+
 Description:
     Preconditions: WolfpackFinance program started
-    <<Header>>
+    
+    Header
 
     Month Day (e.g., 6 9): 7 32
 Expected Results:
+    
     Invalid date
     
     Program Exits
 Actual Results:
+    
     Invalid date
     
     Program Exits
 --------------------------------------
-Test ID:
-    testInvalidDateAug16
-    Author: katlc06
+Test ID: testInvalidDateAug16
+
+Author: katlc06
+
 Description:
     Preconditions: WolfpackFinance program started
-    <<Header>>
+    
+    Header
 
     Month Day (e.g., 6 9): 8 16
 Expected Results:
+    
     Invalid date
     
     Program Exits
 Actual Results:
+    
     Invalid date
     
     Program Exits
 --------------------------------------
-Test ID:
-    testInvalidDateMay
-    Author: katlc06
+Test ID: testInvalidDateMay
+
+Author: katlc06
+
 Description:
     Preconditions: WolfpackFinance program started
-    <<Header>>
+    
+    Header
     
     Month Day (e.g., 6 9): 5 4
 Expected Results:
+    
     Invalid date
     
     Program Exits
 Actual Results:
+    
     Invalid date
     
     Program Exits
 --------------------------------------
-Test ID:
-    testInvalidDateJuly0
-    Author: katlc06
+Test ID: testInvalidDateJuly0
+
+Author: katlc06
+
 Description:
     Preconditions: WolfpackFinance program started
-    <<Header>>
+    
+    Header
     
     Month Day (e.g., 6 9): 7 0
 Expected Results:
+    
     Invalid date
     
     Program Exits
 Actual Results:
+    
     Invalid date
     
     Program Exits
 --------------------------------------
-Test ID:
-    testLoanDeniedCreditTooLowIncome3TimesLoan
-    Author: katlc06
+Test ID: testLoanDeniedCreditTooLowIncome3TimesLoan
+
+Author: katlc06
+
 Description:
     Preconditions: WolfpackFinance program started
-    <<Header>>
+    
+    Header
 
     Month Day (e.g., 6 9): 7 10
     Credit Score (300 - 850): 320
@@ -293,20 +350,24 @@ Description:
     Loan Amount (1000-10000): 1000
     Express Processing(y,n): n
 Expected Results:
+    
     Loan denied
 
     Program Exits
 Actual Results:
+    
     Loan denied
 
     Program Exits
 --------------------------------------
-Test ID:
-    test9.0InteresCredit350ExpressProcessingDisbursementJuly15
-    Author: katlc06
+Test ID: test9.0InteresCredit350ExpressProcessingDisbursementJuly15
+
+Author: katlc06
+
 Description:
     Preconditions: WolfpackFinance program started
-    <<Header>>
+    
+    Header
 
     Month Day (e.g., 6 9): 7 12
     Credit Score (300 - 850): 350
@@ -314,6 +375,7 @@ Description:
     Loan Amount (1000-10000): 1000
     Express Processing(y,n): Y
 Expected Results:
+    
     Loan Amount: $1030.00
     Interest Rate: 9.0%
     Monthly Payment: $25.63
@@ -321,6 +383,7 @@ Expected Results:
 
     Program Exits
 Actual Results:
+    
     Loan Amount: $1030.00
     Interest Rate: 9.0%
     Monthly Payment: $25.63
@@ -328,12 +391,14 @@ Actual Results:
 
     Program Exits
 --------------------------------------
-Test ID:
-    test8.0InterestNotExpressProcessingDisbursementSep2
-    Author: katlc06
+Test ID: test8.0InterestNotExpressProcessingDisbursementSep2
+
+Author: katlc06
+
 Description:
     Preconditions: WolfpackFinance program started
-    <<Header>>
+    
+    Header
 
     Month Day (e.g., 6 9): 8 12
     Credit Score (300 - 850): 650
@@ -341,6 +406,7 @@ Description:
     Loan Amount (1000-10000): 1000
     Express Processing(y,n): n
 Expected Results:
+    
     Loan Amount: $1000.00
     Interest Rate: 8.0%
     Monthly Payment: $24.41
@@ -348,6 +414,7 @@ Expected Results:
 
     Program Exits
 Actual Results:
+    
     Loan Amount: $1000.00
     Interest Rate: 8.0%
     Monthly Payment: $24.41
@@ -355,12 +422,13 @@ Actual Results:
 
     Program Exits
 --------------------------------------
-Test ID:
-    test9.0InterestCredit500ExpressProcessingDisbursementJuly15
-    Author: katlc06
+Test ID: test9.0InterestCredit500ExpressProcessingDisbursementJuly15
+
+Author: katlc06
+
 Description:
     Preconditions: WolfpackFinance program started
-    <<Header>>
+    Header
 
     Month Day (e.g., 6 9): 7 12
     Credit Score (300 - 850): 500
@@ -368,6 +436,7 @@ Description:
     Loan Amount (1000-10000): 2000
     Express Processing(y,n): Y
 Expected Results:
+    
     Loan Amount: $2030.00
     Interest Rate: 9.0%
     Monthly Payment: $50.52
@@ -375,6 +444,7 @@ Expected Results:
     
     Program Exits
 Actual Results:
+    
     Loan Amount: $2030.00
     Interest Rate: 9.0%
     Monthly Payment: $50.52
