@@ -128,7 +128,7 @@ Description:
     Month Day (e.g., 6 9): 6 31
 Expected Results:
    
-   Invalid date
+    Invalid date
 
     Program Exits
 Actual Results:
