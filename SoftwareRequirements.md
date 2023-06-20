@@ -2,7 +2,7 @@
 A company will be offering loans to students for the Fall 2023 semester and they’ve asked you to put together a program that facilitates the application process 
 for loans.
 
-Software Requirements:
+# Software Requirements
 
 Students may apply for loans ranging from $1,000 to $10,000, which will be paid back over a 4-year period. Applications for the loans will be accepted from June 
 1 - August 15, 2023. The interest rate for the loan will depend on the student’s credit score and 2022 income according to the chart below. Students who meet the 
@@ -22,7 +22,7 @@ Loans for students who do not meet the first three criteria, but have a credit s
 approved with an interest rate of 9.0%.
 Loans for students who do not meet any of the criteria will be denied.
 
-User Interface:
+# User Interface
 
 It must display a header that lists the name of the application and provides instructions about using the program:
                  Welcome to College Finance!
@@ -53,7 +53,7 @@ Disbursement Date: Tue, 8 15 2023
 
 If the loan is not approved, the program must output “Loan denied”.
 
-Input/Error Handling:
+# Input/Error Handling
 
 If the user enters a date that is not between June 1 and August 15, inclusive, the program must output Invalid date. If the user enters a credit score that is 
 not between 300 and 850, inclusive, the program must output Invalid credit score. If the user enters a negative income, the program must output Invalid income. 
